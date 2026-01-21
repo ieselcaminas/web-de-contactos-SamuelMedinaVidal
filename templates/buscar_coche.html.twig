@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}Resultados de búsqueda{% endblock %}
+
+{% block body %}
+    <h1>Resultados para el modelo solicitado</h1>
+    
+    {% if coches is not empty %}
+        {% for coche in coches %}
+            <div class="coche-resultado">
+                {{ include('partials/datos_coche.html.twig', { 'coche': coche }) }}
+            </div>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>No se encontraron coches con ese modelo.</p>
+    {% endif %}
+    <a href="{{ path('inicio') }}" class="btn btn-secondary mt-3">Volver</a>
+{% endblock %}

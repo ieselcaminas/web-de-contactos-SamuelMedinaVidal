@@ -1,0 +1,18 @@
+<div class="card mb-3" style="max-width: 18rem;">
+    <div class="card-header bg-primary text-white">
+        <strong>{{ coche.marca }}</strong>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Modelo:</strong> {{ coche.modelo }}</li>
+        <li class="list-group-item"><strong>Matrícula:</strong> {{ coche.matricula }}</li>
+        <li class="list-group-item"><strong>Color:</strong> {{ coche.color }}</li>
+        {% if coche.propietario %}
+            <li class="list-group-item list-group-item-info">
+                <strong>Dueño:</strong> {{ coche.propietario.nombre }}<br>
+                <small>Tel: {{ coche.propietario.telefono }}</small>
+            </li>
+        {% else %}
+            <li class="list-group-item list-group-item-warning"><em>Sin propietario</em></li>
+        {% endif %}
+    </ul>
+</div>

@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block title %}Concesionario{% endblock %}
+{% block body %}
+    <h1>Ficha del coche</h1>
+    {% if coche %}
+        {{ include ('partials/datos_coche.html.twig', { 'coche': coche }) }}
+    {% else %}
+        <h4>Coche no encontrado</h4>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block title %}Añadir Nuevo Coche{% endblock %}
+
+{% form_theme formulario 'bootstrap_5_layout.html.twig' %}
+
+{% block body %}
+    <h1 class="display-5 mb-4">Insertar un nuevo vehículo</h1>
+    
+    <div class="card p-3">
+        {{ form_start(formulario) }}
+            {{ form_widget(formulario) }}
+            <button class="btn btn-primary mt-3">Guardar Coche</button>
+        {{ form_end(formulario) }}
+    </div>
+    
+    <a href="{{ path('inicio') }}" class="btn btn-secondary mt-3">Volver</a>
+{% endblock %}
